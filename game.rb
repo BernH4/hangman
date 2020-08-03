@@ -8,14 +8,11 @@ class Game
   end
 
   def get_secret_word
-    secret_word = 'string'
+    secret_word = 'foo'
     dic_arr = @dictionary.readlines
-    loop do
-      secret_word = dic_arr.sample.chomp.downcase
-      break if (5..12).include?(secret_word.length)
-    end
+    secret_word = dic_arr.sample.chomp.downcase until secret_word.length.between?(3, 6)
     @dictionary.close
-    puts 'Random word has been choosen!'
+    puts 'Random word has been choosen! You can save anytime by typing "save" into console.'
     secret_word
   end
 

@@ -1,3 +1,4 @@
+require 'yaml'
 require_relative 'game.rb'
 
 class GameHandler
